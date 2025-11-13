@@ -105,7 +105,7 @@
             <input type="button" value="23" onclick="avaaLuukku(this)">
         </div>
         <div class="grid-item">
-            <input type="button" value="24" onclick="window.open('24.html', '_blank')">
+            <input type="button" value="24" onclick="avaaLuukku(this)">
         </div>
     </form>
 
@@ -115,7 +115,10 @@
             let tanaan = new Date();
             let paivamaara = tanaan.getDate();
             let luukunnumero = Number(button.value);
-            if (paivamaara >= button.value) {
+            if (paivamaara >= luukunnumero) {
+                if (luukunnumero == 24) {
+                    window.open('24.html', '_blank');
+                }
                 button.style.display = "none";
             }
             else {
