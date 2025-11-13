@@ -1,13 +1,17 @@
  body {
      font-family: Arial, sans-serif;
      text-align: center;
-     background-color: #b30000;
+     background-color: #ce1b1b;
      color: white;
      margin: 0;
  }
 
  h1 {
-     margin: 20px 0;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     font-size: 75px;
+     color: #fff;
+     text-shadow: 5px 5px 0 #097a07;
  }
 
  form {
@@ -16,13 +20,32 @@
      grid-template-rows: repeat(4, 1fr);
      gap: 10px;
      width: 90vw;
-     /* fill almost full width */
      height: 80vh;
-     /* leave space for title */
      margin: 0 auto;
-     /* center horizontally */
      justify-items: center;
      align-items: center;
+     position: relative;
+ }
+
+ .grid-item {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     max-width: 300px;
+     max-height: 300px;
+     ;
+ }
+
+ .photo-box {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     border-radius: 10px;
+     background-size: cover;
+     background-position: center;
+     z-index: 1;
  }
 
  input[type="button"] {
@@ -30,13 +53,16 @@
      height: 100%;
      max-width: 300px;
      max-height: 300px;
-     font-size: 14px;
+     font-size: 100px;
      border: 2px solid white;
      border-radius: 10px;
      background-color: #d62828;
      color: white;
+     text-shadow: 4px 4px 0 #097a07;
      cursor: pointer;
      transition: background-color 0.3s, transform 0.2s;
+     position: relative;
+     z-index: 2;
  }
 
  input[type="button"]:hover {
