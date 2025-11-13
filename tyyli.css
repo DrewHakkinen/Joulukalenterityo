@@ -1,3 +1,42 @@
+ body {
+     font-family: Arial, sans-serif;
+     text-align: center;
+     background-color: #b30000;
+     color: white;
+ }
+
+ h1 {
+     margin-top: 20px;
+ }
+
+ form {
+     display: grid;
+     grid-template-columns: repeat(6, 1fr);
+     grid-template-rows: repeat(4, auto);
+     gap: 10px;
+     justify-items: center;
+     align-items: center;
+     max-width: 600px;
+     margin: 40px auto;
+ }
+
+ input[type="button"] {
+     width: 100px;
+     height: 100px;
+     font-size: 14px;
+     border: 2px solid white;
+     border-radius: 10px;
+     background-color: #d62828;
+     color: white;
+     cursor: pointer;
+     transition: background-color 0.3s, transform 0.2s;
+ }
+
+ input[type="button"]:hover {
+     background-color: #a31e1e;
+     transform: scale(1.05);
+ }
+
  .kuvasivu {
      margin: 0;
      height: 100vh;
