@@ -112,8 +112,15 @@
     <div id="vastaus"></div>
     <script>
         function avaaLuukku(button) {
-            button.style.display = "none";
-
+            let tanaan = new Date();
+            let paivamaara = tanaan.getDate();
+            let luukunnumero = Number(button.value);
+            if (paivamaara >= button.value) {
+                button.style.display = "none";
+            }
+            else {
+                return;
+            }
         }
     </script>
 
