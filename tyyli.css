@@ -4,6 +4,8 @@
      background-color: #ce1b1b;
      color: white;
      margin: 0;
+     background: url('tausta.jpg') repeat;
+     background-size: 500px;
  }
 
  h1 {
@@ -11,7 +13,17 @@
      margin-bottom: 20px;
      font-size: 75px;
      color: #fff;
-     text-shadow: 5px 5px 0 #097a07;
+     text-shadow: 4px 4px 0 #097a07;
+ }
+
+ .reunus1 {
+     border: 8px solid #000c00;
+     border-radius: 12px;
+     display: inline-block;
+     padding: 10px 20px;
+     margin: 10px auto;
+     box-shadow: 0 0 40px rgb(221, 9, 9);
+     background: rgba(0, 0, 0, 0.2);
  }
 
  form {
@@ -34,6 +46,16 @@
      max-width: 300px;
      max-height: 300px;
      ;
+ }
+
+ .reunus2 {
+     padding: 20px;
+     border: 8px solid #0d0d0d;
+     border-radius: 20px;
+     width: 95vw;
+     margin: 0 auto;
+     box-shadow: 0 0 40px rgb(221, 9, 9);
+     background: rgba(0, 0, 0, 0.2);
  }
 
  .photo-box {
