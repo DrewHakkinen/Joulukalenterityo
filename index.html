@@ -118,6 +118,9 @@
             let paivamaara = tanaan.getDate();
             let luukunnumero = Number(button.value);
             if (paivamaara >= luukunnumero) {
+                if (Math.random() < 0.5) {
+                    lumisade();
+                }
                 if (luukunnumero == 24) {
                     window.open('24.html', '_blank');
                 }
@@ -125,6 +128,41 @@
             }
             else {
                 return;
+            }
+        }
+
+        function lumisade() {
+            const maara = 200; // montako hiutaletta (säädä tarpeen mukaan)
+
+            for (let i = 0; i < maara; i++) {
+                let flake = document.createElement("div");
+
+                flake.textContent = "❄";
+
+                // perusulkoasu
+                flake.style.position = "fixed";
+                flake.style.top = "-20px";
+                flake.style.left = Math.random() * window.innerWidth + "px";
+                flake.style.fontSize = (Math.random() * 25 + 10) + "px";
+                flake.style.opacity = (Math.random() * 0.8 + 0.2);
+                flake.style.pointerEvents = "none";
+
+                // animaatio CSS:llä
+                const duration = Math.random() * 3 + 3; // 3–6 sekuntia
+                flake.style.transition = `transform ${duration}s linear, opacity ${duration}s`;
+
+                document.body.appendChild(flake);
+
+                // käynnistetään pudotus
+                setTimeout(() => {
+                    flake.style.transform = `translateY(${window.innerHeight + 60}px)`;
+                    flake.style.opacity = "0";
+                }, 20);
+
+                // poistetaan kun valmis
+                setTimeout(() => {
+                    flake.remove();
+                }, duration * 1000 + 500);
             }
         }
     </script>
