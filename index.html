@@ -132,37 +132,36 @@
         }
         // alla lumisadeanimaatio 50% tod.näköisyydellä
         function lumisade() {
-            let maara = 200; // montako hiutaletta
+            const maara = 100; // lumihiutaleiden määrä
 
             for (let i = 0; i < maara; i++) {
                 let flake = document.createElement("div");
-
                 flake.textContent = "❄";
 
-                // perusulkoasu
+                // Tyylit
                 flake.style.position = "fixed";
-                flake.style.top = "-20px";
+                flake.style.top = "0px";
                 flake.style.left = Math.random() * window.innerWidth + "px";
-                flake.style.fontSize = (Math.random() * 25 + 10) + "px";
-                flake.style.opacity = (Math.random() * 0.8 + 0.2);
+                flake.style.fontSize = (Math.random() * 20 + 10) + "px";
+                flake.style.opacity = Math.random();
                 flake.style.pointerEvents = "none";
-
-                // animaatio
-                let duration = Math.random() * 3 + 3; // 3–6 sekuntia
-                flake.style.transition = `transform ${duration}s linear, opacity ${duration}s`;
 
                 document.body.appendChild(flake);
 
-                // käynnistetään pudotus
-                setTimeout(() => {
-                    flake.style.transform = `translateY(${window.innerHeight + 60}px)`;
-                    flake.style.opacity = "0";
-                }, 20);
+                let y = 0;
+                let speed = Math.random() * 1 + 0.5; // nopeus
 
-                // poistetaan kun valmis
-                setTimeout(() => {
-                    flake.remove();
-                }, duration * 1000 + 500);
+                // Putoamisanimaatio setIntervalilla
+                let interval = setInterval(() => {
+                    y += speed;
+                    flake.style.top = y + "px";
+
+                    // jos hiutale poistuu ruudun alalaidasta: poista se
+                    if (y > window.innerHeight + 50) {
+                        clearInterval(interval);
+                        flake.remove();
+                    }
+                }, 10); // päivitä 100 kertaa sekunnissa
             }
         }
     </script>
