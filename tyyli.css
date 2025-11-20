@@ -1,3 +1,4 @@
+ /*aloitetaan asettamalla fontit ja tausta*/
  body {
      font-family: Arial, sans-serif;
      text-align: center;
@@ -9,6 +10,7 @@
  }
 
  h1 {
+     /* stailataan otsikko */
      margin-top: 20px;
      margin-bottom: 20px;
      font-size: 75px;
@@ -16,6 +18,7 @@
      text-shadow: 4px 4px 0 #097a07;
  }
 
+ /* otsikon reunus */
  .reunus1 {
      border: 8px solid #000c00;
      border-radius: 12px;
@@ -26,6 +29,7 @@
      background: rgba(0, 0, 0, 0.2);
  }
 
+ /* luukkujen ruudukon asettelu */
  form {
      display: grid;
      grid-template-columns: repeat(6, 1fr);
@@ -39,6 +43,7 @@
      position: relative;
  }
 
+ /* luukkujen koko */
  .grid-item {
      position: relative;
      width: 100%;
@@ -48,6 +53,7 @@
      ;
  }
 
+ /* kalenterin reunuksen stailaus */
  .reunus2 {
      padding: 20px;
      border: 8px solid #0d0d0d;
@@ -58,6 +64,7 @@
      background: rgba(0, 0, 0, 0.2);
  }
 
+ /* kuvat luukun takana */
  .photo-box {
      position: absolute;
      top: 0;
@@ -68,9 +75,11 @@
      background-size: cover;
      background-position: center;
      z-index: 1;
+     /* z index asettaa kuvan suljetun luukun (buttonin) taakse */
      border: 3px solid #fff;
  }
 
+ /* suljetun luukun (buttonin) stailaus ja koko*/
  input[type="button"] {
      width: 100%;
      height: 100%;
@@ -86,14 +95,17 @@
      transition: background-color 0.3s, transform 0.2s;
      position: relative;
      z-index: 2;
+     /* z index asettaa buttonin kuvan eteen ennen kuin se on avattu */
+
  }
 
+ /* suljetun luukun hover aseukset */
  input[type="button"]:hover {
      background-color: #a31e1e;
      transform: scale(1.05);
  }
 
-
+ /* 24 luukun erillisen sivun stailaus alkaa tästä */
  .kuvasivu {
      margin: 0;
      height: 100vh;
@@ -110,6 +122,7 @@
      max-width: 800px;
  }
 
+ /* asettelee kuvan*/
  .kuvasivu img {
      width: 100%;
      height: auto;
@@ -117,6 +130,7 @@
      border-radius: 10px;
  }
 
+ /* asettelee kuvan tekstin ja stailaa sen*/
  .kuvasivu .center-text {
      position: absolute;
      top: 50%;

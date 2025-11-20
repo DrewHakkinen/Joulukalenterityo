@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joulun taikaa</title>
-    <link rel="stylesheet" href="tyyli.css">
+    <link rel="stylesheet" href="tyyli.css"> <!-- haetaan tyylit .css tiedostotsta-->
 </head>
 
 <body>
-    <div class="reunus1">
+    <div class="reunus1"> <!-- Lisätään reunus otsikolle-->
         <h1> JOULUKALENTERI </h1>
     </div>
-    <div class="reunus2">
-        <form>
+    <div class="reunus2"> <!-- Lisätään reunus kalenterille-->
+        <form> <!-- Luodaan "gridi", alla grid itemillä sijoitetut kuvaikkuna ja button päällekkäin-->
             <div class="grid-item">
                 <div class="photo-box" style="background-image: url('kuva1.jpg');"></div>
                 <input type="button" value="1" onclick="avaaLuukku(this)">
@@ -112,7 +112,7 @@
         </form>
     </div>
     <div id="vastaus"></div>
-    <script>
+    <script> //scripti selvittää päivänmäärän ja antaa avata oikeat laatikot
         function avaaLuukku(button) {
             let tanaan = new Date();
             let paivamaara = tanaan.getDate();
@@ -130,7 +130,7 @@
                 return;
             }
         }
-
+        // alla lumisadeanimaatio 50% tod.näköisyydellä
         function lumisade() {
             const maara = 200; // montako hiutaletta (säädä tarpeen mukaan)
 
@@ -147,7 +147,7 @@
                 flake.style.opacity = (Math.random() * 0.8 + 0.2);
                 flake.style.pointerEvents = "none";
 
-                // animaatio CSS:llä
+                // animaatio
                 const duration = Math.random() * 3 + 3; // 3–6 sekuntia
                 flake.style.transition = `transform ${duration}s linear, opacity ${duration}s`;
 
